@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<title>Hello Message</title>
+<link
+	href="css/angular-bootstrap.css"
+	rel="stylesheet">
+<style type="text/css">
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none !important;
+}
+</style>
+</head>
+
+<body ng-app="hello" ng-cloak class="ng-cloak" ng-controller="home as home">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<p>
+		 <a ng-show="home.authenticated" class="navbar-brand navbar-right" href= '#/userProfile'><b>User Details</b></a>
+		
+			<a  ng-show="!home.authenticated" class="navbar-brand" href='#/form1'><b>Registration</b></a>
+			
+			 <a  ng-show=" home.authenticated" class="navbar-brand "  href= '#/AdminAccess'><b>AdminAccess<b></a>
+			 <a class="navbar-brand navbar-right" ng-click="logout()"  href='/'><b>MainPage</b></a>
+			</div>
+			</p>
+		</div>
+	</nav>
+	</nav>
+	<div ng-view class="container"></div>
+	<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+	<script src="js/home/home.js" type="text/javascript"></script>
+	
+	<script src="js/userProfile/userProfile.js" type="text/javascript"></script>
+	<script src="js/form1/form1.js" type="text/javascript"></script>
+	<script src="js/hello.js" type="text/javascript"></script>
+	<script src="js/AdminAccess/AdminAccess.js" type="text/javascript"></script>
+</body>
+</html>

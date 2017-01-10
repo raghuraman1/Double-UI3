@@ -1,0 +1,77 @@
+
+<div ng-show="!editShow&&!showdelete" class="well well-lg" style="width:400px;>
+<strong  ng-show="!success" ><p class="alert alert-success">User Name:{{controller.userDetails.username}}</p>
+<p class="alert alert-success">Email:{{controller.userDetails.email}}</p>
+<p class="alert alert-success">Password:{{controller.userDetails.password}}</p>
+<p class="alert alert-success">Mobile:{{controller.userDetails.mobile}}</p>
+<p class="alert alert-success">ID:{{controller.userDetails.id}}</p>
+ <a class="btn btn-primary"align="center"  href="" class="delete" ng-click="deleteuser(controller.userDetails.id)">Delete</a>
+  <a class="btn btn-primary"align="center"  href="" class="delete" ng-click="edituser(controller.userDetails)">Edit</a>
+</strong>   
+
+</div>
+<div ng-show="showdelete">
+<div ng-show="showMessage" class="alert alert-success">
+<h1  >Data is successfully deleted</h1> 
+ <h1> Click here for Main page  <a  ng-click="logout()"  href='/'><b>MainPage</b></a> </h1></div>
+ 
+ <div class="alert alert-danger" ng-show="!showMessage" >
+ <h1>{{error}}</h1>
+</div>
+</div>
+<div ng-show="editShow && !error"> 
+    <form ng-show="!submit" ng-submit="edit1user()" name="myForm"  role="form"  novalidate  >
+
+<label>UserName:
+<!-- <p>Username:<br> -->
+    <input class="form-control"  type="text" name="user"  ng-model="username" required>
+  <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+  <span ng-show="myForm.user.$error.required">Username is required.</span>
+  </span></label>
+</p> 
+  
+</p> 
+<label >Mobile:
+<!-- <p>Username:<br> -->
+  <input 	class="form-control" type="number" name="number" ng-model="mobile"  required>
+  <span style="color:red" ng-show="myForm.number.$dirty && myForm.number.$invalid">
+  <span ng-show="myForm.number.$error.required">Number is required</span>
+  </span></label>
+  
+</p> 
+
+<label for="email">Email:
+
+  <input class="form-control" type="email" name="email" ng-model="email"   required>
+  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+  <span ng-show="myForm.email.$error.required">Email is required.</span>
+  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+  </span></label> 
+</p>
+<label for="password">password:
+
+  <input class="form-control" type="password" name="password" ng-model="password"   required pattern=".{2,}">
+  <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+  <span ng-show="myForm.password.$error.required">password is required.</span>
+  <span ng-show="myForm.password.$error.email">Invalid password address.</span>
+  </span></label> 
+</p>
+  <input class="btn btn-primary" type="submit"
+  ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid||myForm.number.$dirty && myForm.number.$invalid ||  
+myForm.email.$dirty && myForm.password.$invalid||myForm.user.$dirty && myForm.password.$invalid">
+</form>
+    </div> 
+    <div ng-show="submit || userData" >
+ <div class="alert alert-success" ng-show="submit">
+    <h3>Data Successfully Updated</h3>    
+<p ><strong> UserName:{{userData.username}}</strong></p>
+<p><strong>Mobile :{{userData.mobile}}</strong></p>
+<p><strong>Email :{{userData.email}}</strong></p> 
+<p><strong>Password :{{userData.password}}</strong></p> 
+     <h3> Click here for Main page and login again to access  <a   href='/'>MainPage</a> </h3>
+    </div></div>
+     <div class="alert alert-danger"  ng-show="error" >
+    <h1>{{error}}</h1>
+    <h3> Click here to update  the form again  <a   href='/ui3/#/'>Update Again</a> </h3>
+    </div>

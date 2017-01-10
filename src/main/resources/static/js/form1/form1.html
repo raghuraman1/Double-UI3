@@ -1,0 +1,64 @@
+<div   ng-controller="form1" class="container">
+<div class="well well-lg"  ng-show="success" >
+<h1  ng-show="success" ng-hide="errorMessage" class="alert alert-success"><strong>{{success}}</strong></h1>
+<div ng-show="success">
+<p ><strong> UserName:{{userData.username}}</strong></p>
+<p><strong>Mobile :{{userData.mobile}}</strong></p>
+<p><strong>Email :{{userData.email}}</strong></p> 
+<p><strong>Password :{{userData.password}}</strong></p> 
+   <h1> Click here for Main page and login again to access  <a  ng-click="logout()"  href='/'>MainPage</a> </h1>
+</div> 
+</div>       
+       
+<form ng-submit="enterdata()" name="myForm"  role="form" ng-show="showform" novalidate>
+<label>UserName:
+<!-- <p>Username:<br> -->
+    <input class="form-control"  type="text" name="user" placeholder="Username" ng-model="username" required>
+  <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+  <span ng-show="myForm.user.$error.required">Username is required.</span>
+  </span></label>
+</p> 
+  
+</p> 
+<label >Mobile:
+<!-- <p>Username:<br> -->
+  <input 	class="form-control" type="number" name="number" ng-model="mobile"  placeholder="111111" required>
+  <span style="color:red" ng-show="myForm.number.$dirty && myForm.number.$invalid">
+  <span ng-show="myForm.number.$error.required">Number is required</span>
+  </span></label>
+  
+</p> 
+
+<label for="email">Email:
+
+  <input class="form-control" type="email" name="email" ng-model="email"  placeholder="abc@email.com" required>
+  <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+  <span ng-show="myForm.email.$error.required">Email is required.</span>
+  <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+  </span></label> 
+</p>
+<label for="password">password:
+
+  <input class="form-control" type="password" name="password" ng-model="password"   required pattern=".{2,}">
+  <span style="color:red" ng-show="myForm.password.$dirty && myForm.password.$invalid">
+  <span ng-show="myForm.password.$error.required">password is required.</span>
+  <span ng-show="myForm.password.$error.email">Invalid password address.</span>
+  </span></label> 
+</p>
+ 
+  <input class="btn btn-primary" type="submit"
+  ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+myForm.email.$dirty && myForm.email.$invalid || myForm.number.$dirty && myForm.number.$invalid ||  
+myForm.email.$dirty && myForm.password.$invalid || myForm.user.$dirty && myForm.password.$invalid">
+
+</form>
+<div  class="well well-lg"  width=25px ng-show="errorMessage ">
+<h3  ng-show="errorMessage"  ng-hide="success" class="alert alert-danger"><strong>{{errorMessage}}</strong></h3>
+</div> 
+</div>
+
+          
+<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="js/form1.js" type="text/javascript"></script>
+</div>
+
