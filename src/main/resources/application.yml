@@ -10,7 +10,7 @@ spring:
             ddl-auto: validate
 
     datasource:
-        url: jdbc:mysql://mysql:172.30.158.146/harsha
+        url: jdbc:mysql://mysql:172.30.158.146/tcp/harsha
         username: harsha
         password: harsha
         driver-class-name: com.mysql.jdbc.Driver
