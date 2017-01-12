@@ -1,3 +1,4 @@
+
 logging:
   level:
     org.springframework.security: DEBUG
@@ -6,7 +7,7 @@ logging:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.30.158.146:3306	 
+    url: jdbc:mysql://172.30.158.146:3306/harsha	 
     username: harsha
     password: harsha
     continueOnError: true
