@@ -1,3 +1,5 @@
+server:
+  port: 8080
 logging:
   level:
     org.springframework.security: DEBUG
@@ -10,7 +12,7 @@ spring:
             ddl-auto: validate
 
     datasource:
-        url: jdbc:mysql://mysql:172.30.158.146/tcp/harsha
+        url: jdbc:mysql://mysql:172.30.158.146/harsha
         username: harsha
         password: harsha
         driver-class-name: com.mysql.jdbc.Driver
