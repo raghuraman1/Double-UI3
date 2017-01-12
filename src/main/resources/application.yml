@@ -3,30 +3,4 @@ server:
 logging:
   level:
     org.springframework.security: DEBUG
-    
-# Set here configurations for the database connection
-spring:
-  datasource:
-   driverClassName: com.mysql.jdbc.Driver
-    url: mysql://mysql:3306//harsha
-    username: harsha
-    password: harsha
-    continueOnError: true
-    initialize: false
-    initialSize: 0
-    timeBetweenEvictionRunsMillis: 5000
-    minEvictableIdleTimeMillis: 5000
-    minIdle: 0
 
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: none
-      naming_strategy: org.hibernate.cfg.DefaultNamingStrategy
-    properties:
-      hibernate:   
-        dialect: org.hibernate.dialect.MySQL5Dialect
-        hbm2ddl:
-          auto: none
-        temp:
-          use_jdbc_metadata_defaults: false
