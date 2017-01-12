@@ -8,7 +8,7 @@ logging:
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.30.120.154:3306/harsha
+    url: jdbc:mysql://172.30.158.146:3306/harsha	 
     username: harsha
     password: harsha
     continueOnError: true
