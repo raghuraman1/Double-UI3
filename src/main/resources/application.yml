@@ -6,14 +6,13 @@ logging:
     
 # Set here configurations for the database connection
 spring:
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.30.158.146:3306/tcp/harsha
-    username: harsha
-    password: harsha
-    continueOnError: true
-    initialize: false
-    initialSize: 0
-    timeBetweenEvictionRunsMillis: 5000
-    minEvictableIdleTimeMillis: 5000
-    minIdle: 0
+    jpa:
+        database: MYSQL
+        hibernate:
+            ddl-auto: validate
+
+    datasource:
+        url: jdbc:mysql://mysql:172.30.158.146/harsha
+        username: harsha
+        password: harsha
+        driver-class-name: com.mysql.jdbc.Driver
