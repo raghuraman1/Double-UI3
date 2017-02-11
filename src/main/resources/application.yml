@@ -7,10 +7,10 @@ logging:
 # Set here configurations for the database connection
 spring:
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://172.30.166.215:3306/raghu
-    username: raghu
-    password: raghu
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${my_sql_secret_ip}:${my_sql_secret_port}/${my_sql_secret_db}
+    username: ${my_sql_secret_username}
+    password: ${my_sql_secret_password}
     continueOnError: true
     initialize: false
     initialSize: 0
